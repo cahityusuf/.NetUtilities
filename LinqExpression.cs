@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Jkip.Application.Utilities
+namespace VYS.Application.Utilities
 {
     public static class LinqExpression
     {
@@ -14,6 +14,7 @@ namespace Jkip.Application.Utilities
         public static Expression<Func<T, bool>> strToFunc<T>(string propName, string opr, string value, Expression<Func<T, bool>> expr = null)
         {
             Expression<Func<T, bool>> func = null;
+            
             try
             {
                 var type = typeof(T);

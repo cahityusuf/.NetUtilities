@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jkip.Application.Utilities
+namespace VYS.Application.Utilities
 {
     public static class OrderBy
     {
@@ -13,6 +13,7 @@ namespace Jkip.Application.Utilities
             string orderByProperty, bool desc)
         {
             if (source == null) return null;
+            orderByProperty = orderByProperty == "İd" ? "Id" : orderByProperty;
             string command = desc ? "OrderByDescending" : "OrderBy";
             var type = typeof(TEntity);
             var property = type.GetProperty(orderByProperty);
